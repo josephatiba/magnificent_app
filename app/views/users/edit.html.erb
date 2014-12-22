@@ -1,0 +1,14 @@
+<%= form_for @user do |m| %>
+
+<h1>Edit this profile!</h1>
+
+Name: <%= m.text_field :name %>
+Bio: <%= m.text_field :bio %>
+Contact Info: <%= m.text_field :contact_info %>
+
+
+<%= m.submit "Submit these changes!" %>
+
+<% end %>
+
+<%= link_to "Back to the list!", users_path %>

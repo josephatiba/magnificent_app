@@ -1,0 +1,47 @@
+ created: user model
+ Make: controller routes views
+
+
+
+User Model:
+	-name
+	-pictures
+	-bio
+	-email
+	- contact info
+	- :has_many albums
+	-
+	-
+
+	
+	as: :portfolio ( portfolio is the index of the users albums )
+
+
+Album Model (nested routing)
+	- :belongs_to user
+ 	- Name ( of the body of work ) 
+ 	- input Date started and ended ( optional )
+ 	- Blurb (about this album)
+
+ 	- model array optional
+ 	- designers optional
+ 	- locations optional
+ 	- brands optional
+ 	- photographers optional
+
+ 	- :has_many photos
+
+
+Photo Model
+	- :belongs_to album
+	- Caption
+	-link to specific :id in image directory
+
+	liking things would be an array of :id's or following things would be an 
+	mongoid - docs -relations.
+
+	user/user:id/album/album[:id],photo/photo[:id]
+	
+
+
+	

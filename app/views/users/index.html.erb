@@ -1,0 +1,19 @@
+<h1>The Magnificent</h1>
+
+<%= link_to "Sign up / become new user", new_user_path %>
+
+<% @users.each do |user| %>
+	
+	<ul>
+		<li>
+
+			<div>
+				<%= user.name %>
+				<%= user.bio %>
+				<%= link_to "Explore his/her Magnificent!", user_path(user) %>
+			</div>
+
+		</li>
+	</ul>
+
+<% end %>

@@ -1,0 +1,15 @@
+<%= form_for @user do |m| %>
+	
+	Name: <%= m.text_field :name %>
+
+	Bio: <%= m.text_field :bio %>
+	
+	Contact Info: <%= m.text_field :contact_info %>
+	<br>
+
+	<%= m.submit "Add a user!" %>
+
+
+<% end %>
+
+<%= link_to "Back to the list!", users_path %>
