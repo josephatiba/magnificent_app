@@ -1,0 +1,13 @@
+
+<h1>Edit this profile!</h1>
+
+<%= form_for @album do |a| %>
+
+Name: <%= a.text_field :name %>
+About: <%= a.text_field :description %>
+Date: <%= a.text_field  :date %> 
+
+
+<%= a.submit "Submit these changes!" %>
+
+<% end %>

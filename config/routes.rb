@@ -2,19 +2,12 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  get "/users" => "users#index"
+  resources :users, shallow: true do
+    resources :albums do
+      resources :photos
+    end
+  end
 
-  get "users/new" => "users#new", as: :new_user
-
-  get "users/:id" => "users#show", as: :user
-
-  post "users/" => "users#create"
-
-  get "users/:id/edit" => "users#edit", as: :edit_user
-
-  patch "users/:id" => "users#update"
-
-  delete "users/:id" => "users#destroy"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

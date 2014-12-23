@@ -1,0 +1,16 @@
+<%= form_for @album, url: user_albums_path do |a| %>
+	
+	Name: <%= a.text_field :name %>
+
+	Description: <%= a.text_field :description %>
+
+	Date: <%= a.text_field :date %>
+	
+	<br>
+
+	<%= a.submit "Create this album!" %>
+
+
+<% end %>
+
+<%= link_to "Back to the portfolio!", url: user_albums_path %>

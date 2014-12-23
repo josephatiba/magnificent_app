@@ -13,6 +13,11 @@ User Model:
 	-
 	-
 
+
+<%= @user.albums.date %>
+				<%= link_to "View #{user@album.name}", album_path(@album) %>
+
+				url_for([@user, @album])
 	
 	as: :portfolio ( portfolio is the index of the users albums )
 

@@ -1,0 +1,9 @@
+<h1> <%= @album.name %> </h1>
+
+<p> <%= @album.description %> </p>
+<p> <%= @album.date %> </p> 
+
+<%= link_to "back to the portfolio", user_albums_path(@album) %>
+
+ <%= link_to "Edit #{@album.name}'s Information", edit_album_path(@album) %>
+  <%= link_to "Delete #{@album.name}", :album, method: :delete, data: {confirm: "Are you sure you want to delete #{@album.name}?"} %>

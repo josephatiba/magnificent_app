@@ -9,8 +9,9 @@
 
 			<div>
 				<%= user.name %>
+				<%= user.category %>
 				<%= user.bio %>
-				<%= link_to "Explore his/her Magnificent!", user_path(user) %>
+				<%= link_to "Explore #{user.name}, the Magnificent!", user_path(user) %>
 			</div>
 
 		</li>
