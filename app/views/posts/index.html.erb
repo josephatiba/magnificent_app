@@ -1,1 +1,9 @@
 <h1> This is the placeholder </h1>
+
+<%= link_to "Add New Magnificence", new_post_path %>
+
+<% @posts.each do |post| %>
+
+	<h2> <%= link_to post.title, post %> </h2>
+
+<% end %>

@@ -32,7 +32,7 @@ gem 'simple_form', '~> 3.1.0'
 gem 'mongoid-paperclip', '~> 0.0.9'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', '~> 3.1.5'
 
 # Use unicorn as the app server
 # gem 'unicorn'

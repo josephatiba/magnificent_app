@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  root 'post#index'
+  root 'posts#index'
 
 
   # You can have the root of your site routed with "root"
