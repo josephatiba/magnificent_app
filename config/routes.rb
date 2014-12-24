@@ -2,11 +2,9 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :users, shallow: true do
-    resources :albums do
-      resources :photos
-    end
-  end
+  resources :posts
+
+  root 'post#index'
 
 
   # You can have the root of your site routed with "root"

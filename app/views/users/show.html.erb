@@ -10,7 +10,7 @@
   
 <div>
 	<h6> <%= @user.name %>'s Porftolio </h6>
-	<%= link_to "View #{@user.name}'s Porftolio", user_albums_path(@user, @albums) %>
+	<%= link_to "View #{@user.name}'s Porftolio", user_albums_path(@user, params[:id]) %>
 </div>
 
 <%= link_to "back to the list", users_path %>

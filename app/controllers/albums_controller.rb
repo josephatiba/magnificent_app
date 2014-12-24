@@ -29,7 +29,7 @@ class AlbumsController < ApplicationController
 	def update
 		@album = Album.find(params[:id])
 		if @album.update_attributes(album_params)
-			redirect_to album_path(@album)
+			redirect_to new_user_album_path(@album)
 		else
 			render :edit
 		end
@@ -38,9 +38,9 @@ class AlbumsController < ApplicationController
 	def destroy
 		@album = Album.find(params[:id])
 		if @album.destroy
-			redirect_to albums_path
+			redirect_to user_albums_path
 		else
-			redirect_to album_path(@album)
+			redirect_to user_albums_path(@user)
 		end
 	end	
 
