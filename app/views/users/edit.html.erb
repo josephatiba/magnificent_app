@@ -1,21 +1,40 @@
-<%= form_for @user do |m| %>
+<h3>Edit User!</h3>
 
-<h1>Edit this profile!</h1>
+<%= simple_form_for @user do |u| %>
+	<%if @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+			  <% @user.errors.full_messages.each do |message| %>
+			  <li> <%= message %></li>
+			  <% end %>
+			</ul>
+		</div>
+	<% end %>
 
-Name: <%= m.text_field :name %>
-Description: <%= m.text_field :category %>
-Bio: <%= m.text_field :bio %>
-Contact Info: <%= m.text_field :contact_info %>
-<br>
-<div>
-		<%= m.label :album %>
-		<!-- New album -->
-		
+  <div>
+	<%= u.input :first_name %>
+  </div>
 
-	</div>
+  <div>
+	<%= u.input :email %>
+  </div>
 
-<%= m.submit "Submit these changes!" %>
+  <div>
+	<%= u.input :password_digest, label: 'Password' %>
+  </div>
+
+  <div>
+	<%= u.input :passoword_digest, label: 'password jimbo confirmation' %>
+  </div>
+	
+	     <br>
+
+  </div>
+	<%= u.button :submit %>
+  </div>
 
 <% end %>
+
 
 <%= link_to "Back to the list!", users_path %>

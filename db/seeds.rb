@@ -7,16 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = User.create([
-	{ name: 'Joey Jet', category: "Photographer", bio: 'Canada, to the OC, to Mass, to Miami, to LA', contact_info: 'One-eight-hundred call me dot com'},
-	{ name: 'Donatella Versace', category: "Fashion Designer", bio: 'Reggio Calabria, Italy to the World', contact_info: 'Versace-Versace-Versace@Versace.com'},
-	{ name: 'Louis Vuitton', category: "Apparel and Accessories", bio: 'Paris, France to your shoulder, pocket, & the luggage compartment of your get', contact_info: 'LV@LV.com'}
-
+	{ username: 'JoeyAtiba', first_name: 'Joey', last_name: 'Atiba', email: 'joey.atiba@gmail.com', password_digest: '344567786543', category: 'photographer', bio: 'sharper than a yellow number 2, I doesnt what I do, and if you didnt know now you knew', contact_info: '1(800)hope-this-works' }
+	
 	])
 
-albums = Album.create([
-	{ name: 'Deep House', description: "stroker ace", date: '7/4/1776'},
-	{ name: 'Medusa Head', description: "Migos", date: '4/14/2014'},
-	{ name: 'Elle Vee', description: "yeeeeee", date: '7/5,1779'}
-
-	])
 

@@ -1,17 +1,30 @@
-<%= form_for @user do |m| %>
+<h3>Sign Up!</h3>
+<%= link_to "Home", root_path %>
+
+<%= simple_form_for @user do |u| %>
 	
-	Name: <%= m.text_field :name %>
 
-	Category: <%= m.text_field :category %>
+  <div>
+	<%= u.input :first_name %>
+  </div>
 
-	Bio: <%= m.text_field :bio %>
-	
-	Contact Info: <%= m.text_field :contact_info %>
-	<br>
+  <div>
+	<%= u.input :email %>
+  </div>
 
-	<%= m.submit "Add a user!" %>
+   <div>
+	<%= u.input :password_digest, label: 'Password' %>
+  </div>
 
+  <div>
+	<%= u.input :password_digest, label: 'Password Confirmation' %>
+  </div>			
+
+  </div>
+	<%= u.button :submit %>
+  </div>
 
 <% end %>
 
-<%= link_to "Back to the list!", users_path %>
+
+

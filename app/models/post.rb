@@ -3,4 +3,5 @@ class Post
   field :title, type: String
   field :link, type: String
   field :description, type: String
+  belongs_to :user
 end
