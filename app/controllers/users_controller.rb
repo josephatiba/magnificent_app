@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
+		@user.password = params[:password]
 		if @user.save
 			flash[:notice] = "Thank you for signing up! You are Magnificent!"
 			redirect_to posts_path
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:username, :first_name, :last_name, :email, :password_digest, :category, :bio, :contact_info)
+		params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :password_hash, :category, :bio, :contact_info)
 	end
 
 end

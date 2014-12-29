@@ -1,16 +1,7 @@
 <h3>Edit User!</h3>
 
 <%= simple_form_for @user do |u| %>
-	<%if @user.errors.any? %>
-		<div class="error_messages">
-			<h2>Form is invalid</h2>
-			<ul>
-			  <% @user.errors.full_messages.each do |message| %>
-			  <li> <%= message %></li>
-			  <% end %>
-			</ul>
-		</div>
-	<% end %>
+	
 
   <div>
 	<%= u.input :first_name %>
@@ -20,15 +11,13 @@
 	<%= u.input :email %>
   </div>
 
-  <div>
-	<%= u.input :password_digest, label: 'Password' %>
+   <div>
+	<%= u.input :password, label: 'Password' %>
   </div>
 
   <div>
-	<%= u.input :passoword_digest, label: 'password jimbo confirmation' %>
-  </div>
-	
-	     <br>
+	<%= u.input :password, label: 'Password Confirmation' %>
+  </div>			
 
   </div>
 	<%= u.button :submit %>
