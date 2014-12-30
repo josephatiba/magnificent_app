@@ -2,26 +2,18 @@
 <%= link_to "Home", root_path %>
 
 <%= simple_form_for @user do |u| %>
+  <%= u.error_notification %>
 	
 
   <div>
-	<%= u.input :first_name %>
-  </div>
+  	<%= u.input :first_name, required: true, autofocus: true %>
+  	<%= u.input :email, required: true %>
+  	<%= u.input :password, required: true, label: 'Password' %>
+  	<%= u.input :password_confirmation, required: true, label: 'Password Confirmation' %>
+ 	</div>
 
   <div>
-	<%= u.input :email %>
-  </div>
-
-   <div>
-	<%= u.input :password, label: 'Password' %>
-  </div>
-
-  <div>
-	<%= u.input :password, label: 'Password Confirmation' %>
-  </div>			
-
-  </div>
-	<%= u.button :submit %>
+	  <%= u.button :submit, "Sign Up" %>
   </div>
 
 <% end %>

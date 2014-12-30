@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
-
+    
 	def new
 		@user = User.new
 	end
 
 	def create
 		@user = User.new(user_params)
-		@user.password = params[:password]
 		if @user.save
 			flash[:notice] = "Thank you for signing up! You are Magnificent!"
-			redirect_to posts_path
+			redirect_to "/"
 		else
-			render "new"
+			flash[:alert] = "There was a problem creating your account. Please try again"
+			redirect to :back
 		end
 	end
 
@@ -47,11 +47,14 @@ class UsersController < ApplicationController
 		end
 	end	
 
+
 	private
 
 	def user_params
-		params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :password_hash, :category, :bio, :contact_info)
+		params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :password_salt, :password_confirmation, :password_hash, :category, :bio, :contact_info)
 	end
+
+
 
 end
 
