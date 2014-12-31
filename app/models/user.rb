@@ -3,6 +3,7 @@ class User
 
   attr_accessor :password
   validates_confirmation_of :password
+  validates :username, uniqueness: true
 
   before_save :encrypt_password
 
@@ -23,7 +24,8 @@ class User
 
 
   field :username, type: String
-  field :email, type: String	
+  field :email, type: String  
+  field :user_id, type: String	
   field :password_hash, type: String
   field :password_salt, type: String
   field :password_digest, type: String
@@ -32,10 +34,12 @@ class User
   field :category, type: String
   field :bio, type: String
   field :contact_info, type: String
+  
 
  
 
   has_many :posts
+  embeds_many :user_sessions
 
 end
 

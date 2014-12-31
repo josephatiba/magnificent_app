@@ -6,8 +6,10 @@
 	
 
   <div>
-  	<%= u.input :first_name, required: true, autofocus: true %>
-  	<%= u.input :email, required: true %>
+    <%= u.input :first_name, required: true, autofocus: true %>
+  	<%= u.input :last_name, required: true %>
+    <%= u.input :email, required: true %>
+  	<%= u.input :username, required: true, label: 'Create a Username' %>
   	<%= u.input :password, required: true, label: 'Password' %>
   	<%= u.input :password_confirmation, required: true, label: 'Password Confirmation' %>
  	</div>

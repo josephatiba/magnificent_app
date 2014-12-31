@@ -1,5 +1,5 @@
-class SessionsController < ApplicationController
- 
+class UserSessionsController < ApplicationController
+
 
   def create
   	@user = User.authenticate(params[:email], params[:password])
@@ -13,12 +13,12 @@ class SessionsController < ApplicationController
   	end
   end
 
+
   def destroy
   	session[:user_id] = nil
   	flash[:notice] = "You've been logged out successfully."
   	redirect_to "/"
   end
 
+
 end
-
-

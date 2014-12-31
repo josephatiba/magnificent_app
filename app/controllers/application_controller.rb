@@ -4,15 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   private
- 
-  # Finds the User with the ID stored in the session with the key
-  # :current_user_id This is a common way to handle user login in
-  # a Rails application; logging in sets the session value and
-  # logging out removes it.
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-
   helper_method :current_user
 
+  def authorize
+  	redirect_to log_in_path, alert: "Not authorized" if current_user.nil?
+  end
 end

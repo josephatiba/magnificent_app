@@ -1,18 +1,21 @@
 class PostsController < ApplicationController
+	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :authorize, except: [:index, :show]
 
 	def index
 		@posts = Post.all.order_by(id: -1)
 	end
 
 	def show
+		@post = Post.find(params[:id])
 	end
 
 	def new
-		@post = current.user.posts.build
+		@post = current_user.posts.create
 	end
 
 	def create
-		@post = current.user.posts.build(post_params)
+		@post = current_user.posts.create(post_params)
 
 		if @post.save
 			redirect_to @post
@@ -45,6 +48,6 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :link, :description)
+		params.require(:post).permit(:title, :link, :description, :user)
 	end
 end
