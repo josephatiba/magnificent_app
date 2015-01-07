@@ -11,7 +11,7 @@ module UserSessionsHelper
 	end
 
 	def logged_in?
-		!!current_user
+		!current_user
 	end
 
 end
