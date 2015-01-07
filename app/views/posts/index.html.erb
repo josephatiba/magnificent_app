@@ -5,6 +5,9 @@
 <%= link_to "Log Out", log_out_path, method: :delete %>
 
 <h1> The Magnificent </h1>
+<h3><% if current_user %></h3>
+	<div><%= current_user.first_name %></div>
+<% end %>
 
 <% flash.each do |name, msg| %>
 	<%= content_tag :div, msg %>

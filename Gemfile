@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'better_errors'
+gem 'binding_of_caller'
+
 # Adding the Mongoid to this app 
 gem 'mongoid', '~> 4.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

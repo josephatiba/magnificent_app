@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
-	before_action :authorize, except: [:index, :show]
+	
 
 	def index
 		@posts = Post.all.order_by(id: -1)
