@@ -4,19 +4,19 @@ class UserSessionsController < ApplicationController
 	end
 
 	def create
-		user = User.where(email: params[:login][:email]).first
-		if user && user.authenticate(params[:login][:password])
+		user = User.where(email: params[:email]).first
+		if user && user.authenticate(params[:password])
 		  # sets a cookie / stores a session
 		  session[:user_id] = user.id
-		  redirect_to users_path
+		  redirect_to posts_path
 		else
 		  redirect_to login_path
 		end
 	end
 
 	def destroy
-		sessions.delete :user_id
-		redirect_to login_path
+		session.delete :user_id
+		redirect_to "/"
 	end
 end
 
