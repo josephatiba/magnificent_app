@@ -9,7 +9,7 @@
 
 
 
-<%= link_to "Add New Magnificence", new_post_path %>
+<%= logged_in? ? '' : link_to("Add New Magnificence", new_post_path) %>
 
 <% @posts.each do |post| %>
 
