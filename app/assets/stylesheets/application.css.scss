@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+body { padding-top: 70px; }
+
+.credentials
+{
+	position: relative;
+	right: -660px;
+}
+
+.feed 
+{
+	text-align: center;
+}
+
+.header 
+{
+	font-size: 80px;
+}
+
+.add-new 
+{
+	font-size: 30px;
+	position: relative;
+	top: -2.75px;
+}
+
+.post {
+	display: inline;
+	position: relative; 
+   	width: 100%;
+}
+
+.main-page-post-title 
+ { 
+   position: absolute; 
+   top: -20px; 
+   left: 0; 
+   width: 100%;
+   color: rgba(255, 255, 255, 0); 
+}
+.main-page-post-title:hover 
+ { 
+   position: absolute; 
+   top: -20px; 
+   left: 0; 
+   width: 100%;
+   color: rgba(255, 255, 255, 1); 
+   text-decoration: none;
+}
+
+li {
+   list-style: none;
+}

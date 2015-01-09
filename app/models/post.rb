@@ -7,6 +7,8 @@ class Post
   field :description, type: String
   belongs_to :user
 
+  mount_uploader :image, PhotoUploader
+
   def date_published
   	# technically we don't need self. because its an instance variable so it's implied
   	self.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p")

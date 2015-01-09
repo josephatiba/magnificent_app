@@ -1,16 +1,25 @@
 <h1> <%= @post.title  %> </h1>
 <h3> By: <%= @post.user.first_name %> </h3>
+
+<br>
+
+<h4><%= link_to("see more from #{@post.user.first_name} " + "#{@post.user.last_name}", user_path(@post.user_id)) %></h4>
 <h5><%= @post.date_published  %></h5>
 
+<%= image_tag @post.image.url %>
 
-<p> <%= @post.link  %> </p>
+<p> <%= link_to(@post.link, @post.link) %> </p>
 <p> <%= @post.description  %> </p>
 <!--  -->
 
+<% if current_user == @post.user %>
 
+	<%= link_to "Edit", edit_post_path(@post) %>
 
-<%= link_to "Edit", edit_post_path(@post) %>
+	<%= link_to "Destroy", post_path(@post), method: :delete, data: { confirm: "This is probably pretty Maginificent, are you sure you want to delete it?" } %>
 
-<%= link_to "Destroy", post_path(@post), method: :delete, data: { confirm: "This is probably pretty Maginificent, are you sure you want to delete it?" } %>
+	<%= link_to "Home", root_path %>
 
-<%= link_to "Home", root_path %>
+	
+<% end %>
+

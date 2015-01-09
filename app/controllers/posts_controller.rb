@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 	
 
 	def index
-		@posts = Post.all.order_by(id: -1)
+		@posts = Post.all.order(created_at: :desc)
 	end
 
 	def show
@@ -46,10 +46,10 @@ class PostsController < ApplicationController
 
 	def find_post
 		@post = Post.find(params[:id])
-	end
+    end
 
 	def post_params
-		params.require(:post).permit(:title, :link, :description, :user)
+		params.require(:post).permit(:title, :link, :description, :user, :image)
 	end
 
 	def authorize

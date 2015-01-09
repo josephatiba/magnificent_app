@@ -2,7 +2,13 @@ class User
   include Mongoid::Document
 
   
-  validates :username, uniqueness: true
+  validates :username, uniqueness: { case_sensitive: false }
+
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
+  validates :password, presence: true, length: { in: 2..20 }, confirmation: true, on: :create, on: :update # :if => :password, :unless => :password_digest.present?
+
+  attr_reader :password, :password_confirmation
 
   field :username, type: String
   field :email, type: String  
@@ -14,8 +20,11 @@ class User
   field :bio, type: String
   field :contact_info, type: String
 
+
   def password=(unencrypted_password)
+    unless unencrypted_password.empty?
     self.password_digest = BCrypt::Password.create(unencrypted_password)
+    end
   end
 
   # a new method to authenticate a user
@@ -27,7 +36,10 @@ class User
       return false
     end
   end
- 
+
+
+  mount_uploader :image, PhotoUploader
+  mount_uploader :profile_pic, PhotoUploader
 
   has_many :posts
 
