@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require masonry.js
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
@@ -19,3 +20,12 @@
  $(document).ready(function() {
     $('#carousel-example-generic .carousel-inner > .item:first').addClass('active');
  });
+
+var $container = $('#container');
+// initialize
+$container.masonry({
+  columnWidth: 200,
+  itemSelector: '.item'
+});
+
+var msnry = $container.data('masonry');

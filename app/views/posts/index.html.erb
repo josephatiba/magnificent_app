@@ -1,6 +1,5 @@
 
-<div class="container">
-		<!-- Big "Magnificent" at the top of the page-->
+<!-- Big "Magnificent" at the top of the page-->
 	<header class="feed header"> The Magnificent </header>
 
    				<!-- Current User's name Display -->
@@ -20,22 +19,19 @@
 
 	<%= logged_in? ? '' : link_to("Add New Magnificence", new_post_path) %>
 
-
-	<div class="feed">
+<div class="container main">
+		
+<div id="container" class="feed col-xs-12">
 		<% @posts.each do |post| %>
-		<div class="post">
-			
-			<h2 class="main-page-post-title"><%= link_to post.title, post, class: "main-page-post-title" %></h2>
+		<div class="item">
 			
 			<%= link_to image_tag(post.image.url), post %>
+			<p class="main-page-post-title"><%= link_to post.title, post, class: "main-page-post-title" %></p>
+			
+			
 		</div>
 		<% end %>
 	</div>
 
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
