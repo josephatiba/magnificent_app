@@ -43,16 +43,17 @@ body {
 .main-page-post-title 
  { 
    position: absolute; 
-   top: -20px; 
-   left: 0; 
+   top: 50%; 
+   left: 25%; 
    width: 100%;
    color: rgba(255, 255, 255, 1); 
    margin: 0;
+   display: inline-block;
 }
 .main-page-post-title:hover 
  { 
    position: absolute; 
-   top: -20px; 
+   top: 0; 
    left: 0; 
    width: 100%;
    color: rgba(255, 255, 255, 1); 
@@ -60,17 +61,17 @@ body {
 }
 
 #container {
-   border-color: 1em solid blue;
+   width: 900px;
 }
 
 .container {
    padding-left: 0;
    padding-right: 0;
    border-color: 5px solid blue;
+   margin: 0 auto;
 }
 
 .item { 
-   width: 10%; 
    display: inline;
    position: relative;
    float: left; 

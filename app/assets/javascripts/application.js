@@ -22,10 +22,20 @@
  });
 
 var $container = $('#container');
+var msnry = $container.data('masonry');
+//imagesLoaded is
+
 // initialize
 $container.masonry({
-  columnWidth: 200,
+  columnWidth: 240,
   itemSelector: '.item'
 });
 
-var msnry = $container.data('masonry');
+var $container = $('#container').masonry();
+// layout Masonry again after all images have loaded
+$container.imagesLoaded( function() {
+  $container.masonry();
+});
+
+$container.masonry('bindResize')
+
