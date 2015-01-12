@@ -6,7 +6,7 @@ class User
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
-  validates :password, presence: true, length: { in: 2..20 }, confirmation: true, on: :create, on: :update # :if => :password, :unless => :password_digest.present?
+  validates :password, presence: true, length: { in: 2..20 }, confirmation: true, on: [:create, :update] # :if => :password, :unless => :password_digest.present?
 
   attr_reader :password, :password_confirmation
 
@@ -23,7 +23,8 @@ class User
 
   def password=(unencrypted_password)
     unless unencrypted_password.empty?
-    self.password_digest = BCrypt::Password.create(unencrypted_password)
+      @password = unencrypted_password
+      self.password_digest = BCrypt::Password.create(unencrypted_password)
     end
   end
 
