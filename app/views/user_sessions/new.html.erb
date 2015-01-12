@@ -1,20 +1,28 @@
-<h1>Log In</h1>
-<%= link_to "Home", root_path %>
+<div class="container">
+  <div class="row">
+   <div class="col-xs-6 col-xs-offset-5">
 
- <%= form_tag log_in_path do %>
-	
-  <div>
-	<%=label_tag :email %>
-	<%= text_field_tag :email %>
+		<h1>Log In</h1>
+		<%= link_to "Home", root_path %>
+
+		 <%= form_tag log_in_path do %>
+			
+		  <div>
+			<%=label_tag :email %>
+			<%= text_field_tag :email %>
+		  </div>
+
+		   <div>
+			<%=label_tag :password %>
+			<%= password_field_tag :password %>
+		  </div>		
+
+		  <div>
+			<%= submit_tag 'Log In' %>
+		  </div>
+
+		<% end %>
+
   </div>
-
-   <div>
-	<%=label_tag :password %>
-	<%= password_field_tag :password %>
-  </div>		
-
-  </div>
-	<%= submit_tag 'Log In' %>
-  </div>
-
-<% end %>
+ </div>
+</div>

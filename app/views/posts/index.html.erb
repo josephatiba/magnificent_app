@@ -4,33 +4,33 @@
   	<div class="row">
   		<% if current_user %>
 
-		<div><%= current_user.first_name %></div>
+		<div>Welcome, <%= current_user.first_name %>!</div>
 
 	<% end %>
 
 
-
+ <div>
 	<% flash.each do |name, msg| %>
 		<%= content_tag :div, msg %>
 	<% end %>
 
 
-
 	<%= logged_in? ? '' : link_to("Add New Magnificence", new_post_path) %>
+ </div>
 <!-- Big "Magnificent" at the top of the page-->
-		<div class="feed header 12 col-md-offset-6 col-md-12 col-xs-12 col-xs-offset-6">The Magnificent</div>
+		<div class="feed header text-center">The Magnificent</div>
 
    				<!-- Current User's name Display -->
 
 
 
 	<div class="row">	
-	  	<div id="container" class="feed col-md-12 col-md-offset-6 col-xs-12 col-xs-offset-6">
+	  	<div id="container" class="feed col-xs-6 col-xs-offset-3"> 
 		<% @posts.each do |post| %>
 			<div class="item">
 			
 			<%= link_to image_tag(post.image.url), post %>
-			<p class="main-page-post-title"><%= link_to post.title, post, class: "main-page-post-title" %></p>
+			<p class="text-center"><%= link_to post.title, post, class: "main-page-post-title" %></p>
 			
 			
 			</div>

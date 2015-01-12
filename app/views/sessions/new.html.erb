@@ -1,25 +1,35 @@
-<h1>Log In</h1>
-<%= link_to "Home", root_path %>
+<div class="container">
+  <div class="row">
+   <div class="col-xs-6 col-xs-offset-3">
 
-<%= form_for :login do |f| %>
+
+  <div>
+	<h1>Log In</h1>
+  </div>
+
+	<%= form_for :login do |f| %>
 
 
-<div>
-	<%= f.label :email %>
-	<%= f.text_field :email %>
+	<div>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</div>
+
+	<div>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</div>
+
+	<div>
+		<%= f.submit 'Log In!' %>
+	</div>
+
+
+	<% end %>
+  </div>
+ </div>
 </div>
 
-<div>
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-</div>
-
-<div>
-	<%= f.submit 'Log In!' %>
-</div>
-
-
-<% end %>
 
 
 

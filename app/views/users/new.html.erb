@@ -1,46 +1,53 @@
-<h3>Sign Up!</h3>
-<%= link_to "Home", root_path %>
+<div class="container">
+  <div class="row">
+   <div class="col-xs-6 col-xs-offset-5">
 
-<%= form_for @user do |f| %>
-  
-<br>
+      <h3>Sign Up!</h3>
 
-  <div>
-     <%= f.label :first_name %>
-     <%= f.text_field :first_name, value: @user.first_name %>
+
+      <%= form_for @user do |f| %>
+        
+      <br>
+
+        <div>
+           <%= f.label :first_name %>
+           <%= f.text_field :first_name, value: @user.first_name %>
+        </div>
+
+        <div>
+           <%= f.label :last_name %>
+           <%= f.text_field :last_name, value: @user.last_name %>
+        </div>
+
+        <div>
+           <%= f.label :email %>
+           <%= f.text_field :email, value: @user.email %>
+        </div>
+
+        <div>
+           <%= f.label :username %>
+           <%= f.text_field :username, value: @user.username %>
+        </div>
+
+        <div>
+           <%= f.label :password %>
+           <%= f.password_field :password %>
+        </div>
+
+
+        <div>
+           <%= f.label :password_confirmation %>
+           <%= f.password_field :password_confirmation %>
+        </div>
+
+
+        <div>
+           <%= f.submit "Save Changes" %>
+        </div>
+
+
+      <% end %>
+   </div>
   </div>
-
-  <div>
-     <%= f.label :last_name %>
-     <%= f.text_field :last_name, value: @user.last_name %>
-  </div>
-
-  <div>
-     <%= f.label :email %>
-     <%= f.text_field :email, value: @user.email %>
-  </div>
-
-  <div>
-     <%= f.label :username %>
-     <%= f.text_field :username, value: @user.username %>
-  </div>
-
-  <div>
-     <%= f.label :password %>
-     <%= f.password_field :password %>
-  </div>
-
-
-  <div>
-     <%= f.label :password_confirmation %>
-     <%= f.password_field :password_confirmation %>
-  </div>
-
-
-  </div>
-     <%= f.submit "Save Changes" %>
-  </div>
-
-
-<% end %>
+</div>
 

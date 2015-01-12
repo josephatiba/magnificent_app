@@ -17,10 +17,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 body {
    padding-top: 70px; 
    background: gray;
 }
+
+/*
+====================
+      post index
+====================
+*/
 
 .credentials
 {
@@ -40,22 +47,18 @@ body {
 	top: -2.75px;
 }
 
+.feed
+{
+   padding: 0;
+}
+
 .main-page-post-title 
  { 
-   position: absolute; 
-   top: 50%; 
-   left: 25%; 
-   width: 100%;
    color: rgba(255, 255, 255, 1); 
    margin: 0;
-   display: inline-block;
 }
 .main-page-post-title:hover 
  { 
-   position: absolute; 
-   top: 0; 
-   left: 0; 
-   width: 100%;
    color: rgba(255, 255, 255, 1); 
    text-decoration: none;
 }
@@ -118,4 +121,15 @@ p.col-xs-3
 .post-options a
 {
     padding-right: 15px;
+}
+
+/*
+===============================
+      user account page
+===============================
+*/
+
+#carousel-example-generic
+{
+   margin-top: 40px;
 }
