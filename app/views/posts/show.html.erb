@@ -1,25 +1,41 @@
-<h1> <%= @post.title  %> </h1>
-<h3> By: <%= @post.user.first_name %> </h3>
+<div class="row">
+	<h1 class="col-xs-6 col-xs-offset-5"><%= @post.title %></h1>
+	<h3 class="col-xs-6 col-xs-offset-5"> By: <%= link_to(@post.user.first_name, user_path(@post.user_id)) %> </h3>
+</div>
 
 <br>
 
-<h4><%= link_to("see more from #{@post.user.first_name} " + "#{@post.user.last_name}", user_path(@post.user_id)) %></h4>
-<h5><%= @post.date_published  %></h5>
 
-<%= image_tag @post.image.url %>
+<!-- Post Image -->
+<div class="row">
 
-<p> <%= link_to(@post.link, @post.link) %> </p>
-<p> <%= @post.description  %> </p>
-<!--  -->
+	<%= image_tag @post.image.url, class: "col-xs-3 col-xs-offset-4" %>
 
-<% if current_user == @post.user %>
+</div>
 
-	<%= link_to "Edit", edit_post_path(@post) %>
+<div class="row">
+	<h5 class="col-xs-3 col-xs-offset-4"><%= @post.date_published %></h5>
 
-	<%= link_to "Destroy", post_path(@post), method: :delete, data: { confirm: "This is probably pretty Maginificent, are you sure you want to delete it?" } %>
 
-	<%= link_to "Home", root_path %>
+		<div class="col-xs-3 col-xs-offset-4 text-left">
+			Link:  <%= link_to(@post.link, @post.link) %>
+		</div>
 
-	
-<% end %>
+	<div class="col-xs-3 col-xs-offset-4 text-left post-description"> <%= @post.description %> </div>
+<br>
 
+</div>
+
+<div class="row col-xs-3 col-xs-offset-4 post-options">
+	<% if current_user == @post.user %>
+
+		<%= link_to "Edit", edit_post_path(@post) %>
+
+		<%= link_to "Destroy", post_path(@post), method: :delete, data: { confirm: "This is probably pretty Maginificent, are you sure you want to delete it?" } %> 
+
+		<%= link_to "Home", root_path %>
+
+		
+	<% end %>
+
+</div>

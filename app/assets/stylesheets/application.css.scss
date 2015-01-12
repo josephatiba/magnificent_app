@@ -82,3 +82,40 @@ body {
 li {
    list-style: none;
 }
+
+a {
+   color: white;
+}
+
+
+/*
+===============================
+      post styling
+===============================
+*/
+
+.col-xs-6 
+{
+   padding: 0;
+}
+
+
+p.col-xs-3
+{
+   padding: 0;
+}
+
+.post-description
+{
+   margin-top: 10px;
+}
+
+.post-options 
+{
+   margin-top: 10px;
+}
+
+.post-options a
+{
+    padding-right: 15px;
+}
