@@ -1,3 +1,5 @@
+
+
 class Post
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -16,6 +18,16 @@ class Post
 
   def date_added
     created_at.localtime.strftime("%-m/%-d/%Y | %l:%M %p")
+  end
+
+  def self.random(current_post)
+    shuffled_posts = self.all.shuffle
+    random_post = shuffled_posts.first
+    if random_post != current_post
+      random_post
+    else 
+      shuffled_posts[1]
+    end
   end
 
 end

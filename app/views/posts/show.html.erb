@@ -1,6 +1,6 @@
 <div class="row">
-	<h1 class="col-xs-6 col-xs-offset-5"><%= @post.title %></h1>
-	<h3 class="col-xs-6 col-xs-offset-5"> By: <%= link_to(@post.user.first_name, user_path(@post.user_id)) %> </h3>
+	<h1 class="col-xs-6 col-xs-offset-4"><%= @post.title %></h1>
+	<h3 class="col-xs-6 col-xs-offset-4"> By: <%= link_to(@post.user.first_name, user_path(@post.user_id)) %> </h3>
 </div>
 
 <br>
@@ -38,4 +38,12 @@
 		
 	<% end %>
 
+</div>
+
+<div class="item">
+			
+			<%= link_to image_tag(@random_post.image.url, class: "img-responsive"), post_path(@random_post) %>
+			<p><%= link_to @random_post.title, post_path(@random_post), class: "main-page-post-title" %></p>
+			
+			
 </div>

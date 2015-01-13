@@ -51,15 +51,17 @@ body {
  { 
    color: rgba(255, 255, 255, 1); 
    margin: 0;
-}
-.main-page-post-title:hover 
- { 
-   color: rgba(255, 255, 255, 1); 
-   text-decoration: none;
+   height: 10%;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.6); 
+   position: absolute;
+   bottom: 10px;
+   text-align: center;
 }
 
+
 #container {
-   width: 900px;
+   width: 950px;
 }
 
 .container {
@@ -83,6 +85,11 @@ li {
 
 a {
    color: white;
+}
+
+img 
+{
+   padding: 0;
 }
 
 

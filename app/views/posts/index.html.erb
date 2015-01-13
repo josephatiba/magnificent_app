@@ -23,18 +23,23 @@
    				<!-- Current User's name Display -->
 
 
-
+<div id="container" class="feed col-xs-12 col-xs-offset-2"> 
 	<div class="row">	
-	  	<div id="container" class="feed col-xs-6 col-xs-offset-3"> 
+	  	
 		<% @posts.each do |post| %>
 			<div class="item">
 			
-			<%= link_to image_tag(post.image.url), post %>
-			<p class="text-center"><%= link_to post.title, post, class: "main-page-post-title" %></p>
+			<%= link_to image_tag(post.image.url, class: "img-responsive"), post %>
+			<p><%= link_to post.title, post, class: "main-page-post-title" %></p>
 			
 			
 			</div>
 		<% end %>
+		</div>
+		
+		<div>
+			<%= @gilt.pull_title %>
+			<%= image_tag(@gilt.pull_pic) %>
 		</div>
   	</div>
   </div>

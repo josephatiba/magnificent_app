@@ -16,6 +16,8 @@ gem 'mini_magick' # for post-upload processing
 
 gem 'figaro'
 
+gem 'httparty'
+
 #bootstrap gem
 gem 'bootstrap-sass', '~> 3.2.0'
 

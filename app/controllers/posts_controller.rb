@@ -1,3 +1,5 @@
+require_relative 'gilt'
+
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
 	before_action :authorize, only: [:edit, :update, :destroy]
@@ -5,10 +7,12 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.all.order(created_at: :desc)
+		@gilt = Gilt.new(ENV['GILT_KEY'])
 	end
 
 	def show
 		@post = Post.find(params[:id])
+		@random_post = Post.random(@post)
 	end
 
 	def new
