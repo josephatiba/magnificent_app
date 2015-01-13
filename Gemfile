@@ -18,6 +18,8 @@ gem 'figaro'
 
 gem 'httparty'
 
+gem 'masonry-rails', '~> 0.2.4'
+
 #bootstrap gem
 gem 'bootstrap-sass', '~> 3.2.0'
 

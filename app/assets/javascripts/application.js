@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
-//= require masonry.js
 //= require jquery_ujs
+//= require masonry/jquery.masonry
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
@@ -21,21 +21,4 @@
     $('#carousel-example-generic .carousel-inner > .item:first').addClass('active');
  });
 
-var $container = $('#container');
-var msnry = $container.data('masonry');
-//imagesLoaded is
-
-// initialize
-$container.masonry({
-  columnWidth: 240,
-  itemSelector: '.item'
-});
-
-var $container = $('#container').masonry();
-// layout Masonry again after all images have loaded
-$container.imagesLoaded( function() {
-  $container.masonry();
-});
-
-$container.masonry('bindResize')
 

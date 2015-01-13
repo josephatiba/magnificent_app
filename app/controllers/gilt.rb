@@ -22,7 +22,7 @@ class Gilt
   end
 
   def pull_pic()
-  	search['sales'][0]["image_urls"]["161x110"][0]["url"]
+  	search['sales'][0]["image_urls"]["315x295"][0]["url"]
   end
 
 end

@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require 'masonry/transitions'
  *= require_tree .
  *= require_self
  */
@@ -55,13 +56,13 @@ body {
    width: 100%;
    background-color: rgba(0, 0, 0, 0.6); 
    position: absolute;
-   bottom: 10px;
+   bottom: 0;
    text-align: center;
 }
 
 
 #container {
-   width: 950px;
+   width: 900px;
 }
 
 .container {
@@ -72,15 +73,23 @@ body {
 }
 
 .item { 
-   display: inline;
-   position: relative;
-   float: left; 
+   width: 300px;
 }
 
 .item.w2 { width: 50%; }
 
+p
+{
+   margin: 0;
+}
+
 li {
    list-style: none;
+}
+
+.panel-defaultbrac
+{
+   margin: 0;
 }
 
 a {
@@ -134,4 +143,8 @@ p.col-xs-3
 #carousel-example-generic
 {
    margin-top: 40px;
+}
+
+#posts {
+   width: 300px;
 }
