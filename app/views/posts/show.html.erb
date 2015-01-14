@@ -16,7 +16,7 @@
 
 
 		<div class="col-xs-3 col-xs-offset-4 text-left">
-			<b>Link:</b>  <%= link_to(@post.link, @post.link, class: "post-show-link") %>
+			<b>Link:</b>  <%= link_to(@post.link, @post.link, :target => "_blank", class: "post-show-link") %>
 		</div>
 
 	<div class="col-xs-3 col-xs-offset-4 text-left post-description"> <%= @post.description %> </div>
