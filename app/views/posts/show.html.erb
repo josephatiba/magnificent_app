@@ -19,12 +19,12 @@
 			<p><i>Link</i>: <%= link_to(@post.link, @post.link, :target => "_blank", class: "post-show-link") %></p>
 		</div>
 
-	<div class="col-xs-12 col-xs-offset-4 text-left post-description"> <%= @post.description %> </div>
+	<div class="col-xs-6 col-xs-offset-4 text-left post-description"> <%= @post.description %> </div>
 <br>
 
 </div>
 
-<div class="col-xs-12 col-xs-offset-4 post-options">
+<div class="col-xs-5 col-xs-offset-4 post-options">
 	<% if current_user == @post.user %>
 
 		<%= link_to "Edit", edit_post_path(@post), class: "post-show-link" %>
@@ -39,7 +39,7 @@
 		<div class='test-random'>
 			<%= link_to 'Click for more Maginificence', post_path(@random_post), class: "post-show-link" %>
 			<%= link_to image_tag(@random_post.image.url(:small)), post_path(@random_post) %>
-			<p id='random-post-title'><%= link_to @random_post.title, post_path(@random_post) %></p>
+			<!-- <p id='random-post-title'><%= link_to @random_post.title, post_path(@random_post) %></p> -->
 		</div>
 
 </div>
