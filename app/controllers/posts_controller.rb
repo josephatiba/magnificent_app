@@ -16,11 +16,11 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@post = current_user.posts.create
+		@post = current_user.posts.new
 	end
 
 	def create
-		@post = current_user.posts.create(post_params)
+		@post = current_user.posts.new(post_params)
 
 		if @post.save
 			redirect_to @post
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
     end
 
 	def post_params
-		params.require(:post).permit(:title, :link, :description, :user, :image)
+		params.require(:post).permit(:title, :link, :description, :user, :image, :post_pic)
 	end
 
 	def authorize

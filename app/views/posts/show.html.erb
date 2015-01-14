@@ -7,9 +7,9 @@
 
 
 <!-- Post Image -->
-<div class="row">
+<div class="row col-xs-3 col-xs-offset-4">
 
-	<%= image_tag @post.image.url, class: "col-xs-3 col-xs-offset-4" %>
+	<%= image_tag @post.image.url(:post_pic) %>
 
 </div>
 
@@ -26,7 +26,7 @@
 
 </div>
 
-<div class="row col-xs-3 col-xs-offset-4 post-options">
+<div class="col-xs-3 col-xs-offset-4 post-options">
 	<% if current_user == @post.user %>
 
 		<%= link_to "Edit", edit_post_path(@post) %>
@@ -40,10 +40,7 @@
 
 </div>
 
-<div class="item">
-			
-			<%= link_to image_tag(@random_post.image.url, class: "img-responsive"), post_path(@random_post) %>
-			<p><%= link_to @random_post.title, post_path(@random_post), class: "main-page-post-title" %></p>
-			
-			
+<div class='test-random'>
+	<%= link_to image_tag(@random_post.image.url(:small)), post_path(@random_post) %>
+	<p id='random-post-title'><%= link_to @random_post.title, post_path(@random_post) %></p>
 </div>

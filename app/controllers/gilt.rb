@@ -25,4 +25,8 @@ class Gilt
   	search['sales'][0]["image_urls"]["315x295"][0]["url"]
   end
 
+  def pull_url()
+    search["sales"][0]["sale_url"]
+  end
+
 end

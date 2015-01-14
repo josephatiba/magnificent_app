@@ -32,8 +32,8 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
            <% @user.posts.each do |post| %>
-            <div class="item col-md-8 col-md-offset-4">
-        	      <%= image_tag post.image, class: "img-responsive" %>
+            <div class="item col-xs-12 col-xs-offset-3">
+        	      <%= image_tag post.image.url(:post_pic) %>
               <div class="carousel-caption">
                 <%=  post.title %>
               </div>
@@ -60,7 +60,7 @@
           <% @user.posts.each do |post| %>
             
               <li >
-                <%= image_tag post.image %>
+                <%= image_tag post.image.url(:small) %>
               </li>
             
           <% end %>

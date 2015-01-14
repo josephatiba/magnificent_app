@@ -72,9 +72,8 @@ body {
    margin: 0 auto;
 }
 
-.item { 
-   width: 300px;
-}
+.item 
+{ }
 
 .item.w2 { width: 50%; }
 
@@ -87,7 +86,7 @@ li {
    list-style: none;
 }
 
-.panel-defaultbrac
+.panel-default
 {
    margin: 0;
 }
@@ -133,6 +132,24 @@ p.col-xs-3
 {
     padding-right: 15px;
 }
+
+.test-random {
+   width: 250px;
+   margin: 0;
+   position: absolute;
+   bottom: 0;
+   text-align: center;
+   #random-post-title 
+    { 
+      height: 10%;
+      color: rgba(255, 255, 255, 1); 
+      background-color: rgba(0, 0, 0, 0.6); 
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+   }
+}
+
 
 /*
 ===============================

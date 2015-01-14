@@ -16,6 +16,8 @@ gem 'mini_magick' # for post-upload processing
 
 gem 'figaro'
 
+gem 'pry'
+
 gem 'httparty'
 
 gem 'masonry-rails', '~> 0.2.4'

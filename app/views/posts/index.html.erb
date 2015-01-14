@@ -25,15 +25,20 @@
 <div class="container">
 	<div id="posts"> 
 		<!-- Gilt API posts -->
-			<div class="box panel panel-default">	
-				<%= image_tag(@gilt.pull_pic) %>
-				<p class="main-page-post-title"><%= @gilt.pull_title %></p>	
+		<% @gilt.search['sales'].each do |sale| %>	
+			<div class="box panel panel-default">
+				<%= link_to image_tag(sale["image_urls"]["315x295"][0]["url"]), sale["sale_url"] %>
+				<p><%= link_to sale["name"], sale["sale_url"], class: "main-page-post-title" %></p>
+
 			</div>
+		<% end %>
+		
+
 		<!-- user posts -->
 		<% @posts.each do |post| %>
 			<div class="box panel panel-default">
-				<%= link_to image_tag(post.image.url), post %>
-				<li><%= link_to post.title, post, class: "main-page-post-title" %></li>
+				<%= link_to image_tag(post.image.url(:tile)), post %>
+				<p><%= link_to post.title, post, class: "main-page-post-title" %></p>
 	    	</div>	
 		<% end %>	  
 			
