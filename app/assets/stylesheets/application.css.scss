@@ -21,14 +21,39 @@
 
 body {
    padding-top: 70px; 
-   background: gray;
 }
+
+/*
+====================
+  nav bar styling
+====================
+*/
+
+.navbar 
+{
+   background-color: black;
+   .navbar-brand
+   {
+      color: white;
+   }
+   .navbar-nav li
+   {
+      color: white;
+   }
+}
+
+
+
 
 /*
 ====================
       post index
 ====================
 */
+.panel
+{
+   border: none;
+}
 
 
 .header 
@@ -52,12 +77,26 @@ body {
  { 
    color: rgba(255, 255, 255, 1); 
    margin: 0;
-   height: 10%;
+   height: 15%;
    width: 100%;
    background-color: rgba(0, 0, 0, 0.6); 
    position: absolute;
    bottom: 0;
    text-align: center;
+   font-size: 1.4em;
+}
+
+.main-page-post-title:hover 
+{
+   color: rgba(255, 255, 255, 1); 
+   margin: 0;
+   height: 100%;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.6); 
+   position: absolute;
+   bottom: 0;
+   text-align: center;
+   text-decoration: none;
 }
 
 
@@ -72,8 +111,11 @@ body {
    margin: 0 auto;
 }
 
-.item 
-{ }
+.active 
+{
+    float: none;
+    margin: 0 auto;
+ }
 
 .item.w2 { width: 50%; }
 
@@ -92,7 +134,7 @@ li {
 }
 
 a {
-   color: white;
+   color: gray;
 }
 
 img 
@@ -128,15 +170,27 @@ p.col-xs-3
    margin-top: 10px;
 }
 
+.post-show-link
+{
+   color: black;
+   font-weight: 700;
+}
+
 .post-options a
 {
     padding-right: 15px;
+}
+
+.post-heading
+{
+   margin-bottom: 70px;
 }
 
 .test-random {
    width: 250px;
    margin: 0;
    position: absolute;
+   left: 76%;
    bottom: 0;
    text-align: center;
    #random-post-title 

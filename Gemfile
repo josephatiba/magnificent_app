@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.3'
+
 gem 'better_errors'
 gem 'binding_of_caller'
 
@@ -17,6 +19,10 @@ gem 'mini_magick' # for post-upload processing
 gem 'figaro'
 
 gem 'pry'
+
+gem 'rails_12factor', group: :production
+
+gem 'thin', group: :production
 
 gem 'httparty'
 

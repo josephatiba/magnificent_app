@@ -1,9 +1,7 @@
-<div class="row">
+<div class="row post-heading">
 	<h1 class="col-xs-6 col-xs-offset-4"><%= @post.title %></h1>
-	<h3 class="col-xs-6 col-xs-offset-4"> By: <%= link_to(@post.user.first_name, user_path(@post.user_id)) %> </h3>
+	<h3 class="col-xs-6 col-xs-offset-4"> By: <%= link_to(@post.user.first_name, user_path(@post.user_id), class: "post-show-link") %> </h3>
 </div>
-
-<br>
 
 
 <!-- Post Image -->
@@ -18,7 +16,7 @@
 
 
 		<div class="col-xs-3 col-xs-offset-4 text-left">
-			Link:  <%= link_to(@post.link, @post.link) %>
+			<b>Link:</b>  <%= link_to(@post.link, @post.link, class: "post-show-link") %>
 		</div>
 
 	<div class="col-xs-3 col-xs-offset-4 text-left post-description"> <%= @post.description %> </div>
@@ -29,11 +27,11 @@
 <div class="col-xs-3 col-xs-offset-4 post-options">
 	<% if current_user == @post.user %>
 
-		<%= link_to "Edit", edit_post_path(@post) %>
+		<%= link_to "Edit", edit_post_path(@post), class: "post-show-link" %>
 
-		<%= link_to "Destroy", post_path(@post), method: :delete, data: { confirm: "This is probably pretty Maginificent, are you sure you want to delete it?" } %> 
+		<%= link_to "Destroy", post_path(@post), class: "post-show-link", method: :delete, data: { confirm: "This is probably pretty Maginificent, are you sure you want to delete it?" } %> 
 
-		<%= link_to "Home", root_path %>
+		<%= link_to "Home", root_path, class: "post-show-link" %>
 
 		
 	<% end %>
@@ -41,6 +39,7 @@
 </div>
 
 <div class='test-random'>
+	<%= link_to 'Click for more Maginificence', post_path(@random_post), class: "post-show-link"  %>
 	<%= link_to image_tag(@random_post.image.url(:small)), post_path(@random_post) %>
 	<p id='random-post-title'><%= link_to @random_post.title, post_path(@random_post) %></p>
 </div>

@@ -4,17 +4,19 @@
   	<%= link_to "Cancel #{@user.first_name}'s account?", :user, method: :delete, data: {confirm: "Are you sure you want to remove your account, #{@user.first_name}? You are Magnificent and we'd like you to stay!"} %>
 <% end %>
 
-<div class="container">
+<div class="container text-center center-block">
   <div class="row">
-   <div class="col-xs-6 col-xs-offset-5">
+   
             	<h1> <%= @user.first_name %> </h1>
 
               <%= image_tag @user.profile_pic %>
 
-            	<p> <%= @user.category %> </p>
-            	<p> <%= @user.bio %> </p> 
+            	<b > <%= @user.category %> </b>
+              <br>
+            	<p class="text-left"> <%= @user.bio %> </p> 
+              <br>
             	<p> <%= @user.contact_info %> </p>
-            </div>
+            
         </div>
 
         <br>
@@ -32,8 +34,8 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
            <% @user.posts.each do |post| %>
-            <div class="item col-xs-12 col-xs-offset-3">
-        	      <%= image_tag post.image.url(:post_pic) %>
+            <div class="item">
+        	      <%= image_tag post.image.url(:post_pic), class: "center-block" %>
               <div class="carousel-caption">
                 <%=  post.title %>
               </div>
@@ -54,23 +56,22 @@
 
         <br>
 
-        <div>
-          <h6> <%= @user.first_name %>'s Porftolio </h6>
-          <ul>
-          <% @user.posts.each do |post| %>
-            
-              <li >
-                <%= image_tag post.image.url(:small) %>
-              </li>
-            
-          <% end %>
-          </ul>
+        <div class="container">
+          <div id="posts" class="center-block"> 
+            <h6> <%= @user.first_name %>'s Porftolio </h6>
+
+    <!-- user posts -->
+    <% @user.posts.each do |post| %>
+      <div class="box panel panel-default">
+        <%= link_to image_tag(post.image.url(:small)), post %>
+        <p><%= link_to post.title, post %></p>
+        </div>  
+    <% end %>   
+      
         </div>
 
-
       </div>
-    </div>
-</div>
+   
 
 
 
