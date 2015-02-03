@@ -1,4 +1,4 @@
-
+  
 class Gilt
 
   API_HOST = 'api.gilt.com/v1/'
