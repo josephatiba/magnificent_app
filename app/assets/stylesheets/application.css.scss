@@ -35,6 +35,8 @@ body {
    .navbar-brand
    {
       color: white;
+      position: relative;
+      left: 20%
    }
    .navbar-nav li
    {
@@ -50,6 +52,12 @@ body {
       post index
 ====================
 */
+
+.nav-main 
+{
+   margin: 0 auto;
+}
+
 .panel
 {
    border: none;

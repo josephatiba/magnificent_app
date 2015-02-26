@@ -9,9 +9,6 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
 
   def current_user
-		# if(user_id = session[:user_id])
-		# 	@current_user ||= User.find(session[:user_id])
-		# end	
 
 		if(session[:user_id])
 			@current_user ||= User.find(session[:user_id]["$oid"])	
