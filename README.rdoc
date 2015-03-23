@@ -1,28 +1,28 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The Magnificent is web application containing a luxury lifestyle blog.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Implementation
+
+* Ruby on Rails
+
+* MongoDB
+
+* Gilt API
+
+* Masonry: http://masonry.desandro.com/
+
+* Bootstrap
+
+* Pinterest Pin It Button
+
+
+== Instructions
+
+Link to Herokuapp: http://magnificent.herokuapp.com/
+
+== About the Developer
+
+http://joseph_atiba.meteor.com/
+
