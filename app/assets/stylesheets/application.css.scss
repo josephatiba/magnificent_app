@@ -230,7 +230,7 @@ p.col-xs-3
 
 .post-show
 {
-   border: 5px solid blue;
+   border: 1px solid black;
    max-width: 600px;
 }
 
@@ -239,8 +239,27 @@ p.col-xs-3
    max-width: 95%;
    padding-left: 1%; 
    padding-right: 1%; 
-   padding-bottom: 1%; 
+   padding-bottom: 1%;
+   margin: 0 auto; 
 }
+
+.post-details
+{
+   max-width: 75%;
+   margin: 0 auto;
+}
+
+.post-image
+{
+   max-width: 100%
+}
+
+// .link-to-source
+// {
+//    max-width: 75%;
+//    padding-left: 1%; 
+//    padding-right: 1%; 
+// }
 
 
 /*
