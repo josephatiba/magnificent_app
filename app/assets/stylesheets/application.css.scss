@@ -40,10 +40,15 @@ body {
       position: relative;
       left: 20%
    }
-   .navbar-nav li
+   .navbar-nav li a
    {
       color: white;
    }
+}
+
+.nav-toggle-button
+{
+   background-color: white;
 }
 
 
