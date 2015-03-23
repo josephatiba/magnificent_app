@@ -21,6 +21,8 @@
 
         <br>
 
+          <h4><%= @user.first_name %>'s Porftolio </h4>
+
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -56,22 +58,7 @@
 
         <br>
 
-        <div class="container">
-          <div id="posts" class="center-block"> 
-            <h6> <%= @user.first_name %>'s Porftolio </h6>
-
-    <!-- user posts -->
-    <% @user.posts.each do |post| %>
-      <div class="box panel panel-default">
-        <%= link_to image_tag(post.image.url(:small)), post %>
-        <p><%= link_to post.title, post %></p>
-        </div>  
-    <% end %>   
-      
-        </div>
-
-      </div>
-   
+        
 
 
 
