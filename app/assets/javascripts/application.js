@@ -16,8 +16,8 @@
 //= require masonry/jquery.masonry
 //= require_tree .
 
- // $(document).ready(function() {
- //    $('#carousel-example-generic .carousel-inner > .item:first').addClass('active');
- // });
+ $(document).ready(function() {
+    $('#carousel-example-generic .carousel-inner > .item:first').addClass('active');
+ });
 
 
