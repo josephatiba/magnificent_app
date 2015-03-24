@@ -139,7 +139,7 @@ body {
 
 
 .post-index-tile{
-   @media screen and (max-width: 768px){
+   @media screen and (max-width: 568px){
       max-width: 100%;
       max-height: auto;
    }   
@@ -160,7 +160,7 @@ body {
 
 .container.masonry-container
 {
-   @media screen and (max-width: 768px){
+   @media screen and (max-width: 568px){
       width: 100%;
       padding-left: 0;
       padding-right: 0;
@@ -258,9 +258,6 @@ p.col-xs-3
    }
 }
 
-.row.col-xs-12.col-xs-offset-4 {
-   padding-left: 0;
-}
 
 .post-show
 {
