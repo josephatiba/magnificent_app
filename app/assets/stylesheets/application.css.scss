@@ -33,11 +33,11 @@ body {
    width: $max-width;
 }
 
-.collapse.navbar-collapse
+.collapse.navbar-collapse ul li 
 {
    padding-top: 0;
    @media only screen and (max-width: 768px){
-      padding-top: 10%;
+      padding-top: 25px;
    }
 }
 
