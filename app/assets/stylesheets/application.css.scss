@@ -149,9 +149,8 @@ div#posts.center-block.masonry
 
 
 .post-index-tile{
-   @media screen and (max-width: 568px){
-      max-width: 100%;
-      max-height: auto;
+   @media screen and (max-width: 600px){
+      width: 95%;
    }   
 
 }
