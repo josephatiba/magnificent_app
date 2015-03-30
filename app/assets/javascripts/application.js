@@ -29,12 +29,24 @@
       
     });
 
+    var buttonFilters = document.getElementsByClassName("filter-button");
+
     // filter items on button click
     $('#filters').on( 'click', 'button', function() {
       var filterValue = $(this).attr('data-filter');
       console.log(filterValue);
       console.log(this);
+      console.log(buttonFilters.length);
       $container.isotope({ filter: filterValue });
+      
+      // adds greed color to color selected button
+      for(i = 0; i < buttonFilters.length; i++) {
+        
+            $(buttonFilters[i]).removeClass('btn-success');
+          
+          }
+          $(this).addClass('btn-success');
+
     });
 
    $('#test').click(function() {
