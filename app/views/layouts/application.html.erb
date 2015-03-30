@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="magnificent">
 <head>
   <title>MagnificentApp</title>
   
 
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -15,7 +16,7 @@
 
 
 </head>
-<body>
+<body ng-controller="ContentController as content">
 
 <%= render 'shared/navbar' %>
 
