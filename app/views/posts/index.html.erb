@@ -39,9 +39,9 @@
 
     <!-- Gilt API posts -->
     <% @gilt.gilt_search.each do |sale| %>  
-      <div class="box panel panel-default">
-        <%= link_to image_tag(sale["image_urls"]["315x295"][0]["url"], class: "post-index-tile"), sale["sale_url"], :target => "_blank" %>
-        <p><%= link_to sale["name"], sale["sale_url"], :target => "_blank", class: "main-page-post-title" %></p>
+      <div class="box panel panel-default <%= sale[:store] %>">
+        <%= link_to image_tag(sale[:image_url], class: "post-index-tile"), sale[:sale_url], :target => "_blank" %>
+        <p><%= link_to sale[:sale_name], sale[:sale_url], :target => "_blank", class: "main-page-post-title" %></p>
 
       </div>
     <% end %> 
