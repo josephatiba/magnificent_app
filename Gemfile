@@ -28,6 +28,10 @@ gem 'httparty'
 
 gem 'masonry-rails', '~> 0.2.4'
 
+gem 'angular-rails-templates'
+
+gem 'angularjs-rails'
+
 #bootstrap gem
 gem 'bootstrap-sass', '~> 3.2.0'
 
