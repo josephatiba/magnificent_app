@@ -14,15 +14,38 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require masonry/jquery.masonry
-//= require angular
-//= require angular-resource
-//= require angular-route
-//= require angular-rails-templates
+//= require isotope/jquery.isotope
 //= require_tree .
-//= require_tree ./templates
 
  $(document).ready(function() {
     $('#carousel-example-generic .carousel-inner > .item:first').addClass('active');
+
  });
 
+  $(document).ready(function() {
+       // init Isotope
+    var $container = $('#container').isotope({
+      // options
+      
+    });
 
+    // filter items on button click
+    $('#filters').on( 'click', 'button', function() {
+      var filterValue = $(this).attr('data-filter');
+      console.log(filterValue);
+      console.log(this);
+      $container.isotope({ filter: filterValue });
+    });
+
+   $('#test').click(function() {
+      console.log("test");
+    });
+
+});
+
+
+
+
+
+
+ 

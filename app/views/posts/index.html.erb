@@ -20,14 +20,23 @@
 <!-- Big "Magnificent" at the top of the page-->
   <div class="feed header text-center center-block">
   <h1>The Magnificent<h1>
-  {{3 + 3}}
-  {{content.test}}
-  </div>
+
+		  
+
+		<div id="filters" class="button-group">
+		  <button class="button is-checked" data-filter="*" id="test">show all</button>
+		  <button class="button" data-filter=".women">Women</button>
+		  <button class="button" data-filter=".men">Men</button>
+		  <button class="button" data-filter=".kids">Baby & Kids</button>
+		  <button class="button" data-filter=".home">Home</button>
+		</div>
+
+ </div>
   <!-- Current User's name Display -->
 
 
-<div class="container masonry-container">
-  <div id="posts" class="center-block"> 
+<div class="container" id="masonry-container">
+  <div id="container" class="center-block"> 
     
 
     <!-- user posts -->
