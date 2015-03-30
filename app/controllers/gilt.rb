@@ -3,7 +3,7 @@
 class Gilt
 
 
-  API_HOST = 'api.gilt.com/v1/'
+  API_HOST = 'api.gilt.com/v1'
 
  
 
@@ -12,21 +12,61 @@ class Gilt
   end
 
 
-  def search()
-     gilt = HTTParty.get("https://api.gilt.com/v1/sales/men/active.json?apikey=#{@key}")
-     @results = JSON.parse(gilt.body)
+
+  def gilt_search
+
+     gilt_men = HTTParty.get("https://#{API_HOST}/sales/active.json?apikey=#{@key}")
+     gilt_men_results = JSON.parse(gilt_men.body)
+     gilt_men_results["sales"]
+
+
+     # gilt_women = HTTParty.get("https://#{API_HOST}/sales/women/active.json?apikey=#{@key}")
+     # gilt_women_results = JSON.parse(gilt_women.body)
+     # gilt_women_results["sales"]
+     # # gilt_search.push(gilt_men_results)
+
+
+     # array_of_sales_results_combined = []
+
+     # gilt_men_results["sales"].each do |item|
+     #  # initialize container array
+     #    container_of_sales = {
+     #      sale_name: "",
+     #      image_url: "",
+     #      sale_url: "", 
+     #      store: ""
+     #    }
+     #    # put in container array values
+     #    container_of_sales[:sale_name] = item["name"]
+     #    container_of_sales[:image_url] = item["image_urls"]["315x295"][0]["url"]
+     #    container_of_sales[:sale_url] = item["sale_url"]
+     #    container_of_sales[:store] = item["store"]
+
+     #    # push container array to array of sales results
+     #    array_of_sales_results_combined.push(container_of_sales)
+     # end
+
+     # gilt_women_results["sales"].each do |item|
+     #  # initialize container array
+     #    container_of_sales = {
+     #      sale_name: "",
+     #      image_url: "",
+     #      sale_url: "",
+     #      store: ""
+     #    }
+
+     #    container_of_sales[:sale_name] = item["name"]
+     #    container_of_sales[:image_url] = item["image_urls"]["315x295"][0]["url"]
+     #    container_of_sales[:sale_url] = item["sale_url"]
+     #    container_of_sales[:store] = item["store"]
+
+     #    array_of_sales_results_combined.push(container_of_sales)
+     # end
+
+     # return array_of_sales_results_combined.shuffle
+
+
   end
 
-  def pull_title()
-  	search["sales"][0]["name"]
-  end
-
-  def pull_pic()
-  	search['sales'][0]["image_urls"]["315x295"][0]["url"]
-  end
-
-  def pull_url()
-    search["sales"][0]["sale_url"]
-  end
 
 end
