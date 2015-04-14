@@ -17,12 +17,11 @@
 //= require isotope/jquery.isotope
 //= require_tree .
 
- $(document).ready(function() {
-    $('#carousel-example-generic .carousel-inner > .item:first').addClass('active');
-
- });
 
   $(document).ready(function() {
+    
+    $('#carousel-example-generic .carousel-inner > .item:first').addClass('active');
+
        // init Isotope
     var $container = $('#container').isotope({
       // options
@@ -30,6 +29,23 @@
     });
 
     var buttonFilters = document.getElementsByClassName("filter-button");
+
+  
+
+    $(document).ready(function(){
+      var filterValue = $(buttonFilters[0]).attr('data-filter');
+      console.log(filterValue);
+      console.log(this);
+      console.log(buttonFilters.length);
+      $container.isotope({ filter: filterValue });
+      for(i = 0; i < buttonFilters.length; i++) {
+        
+            $(buttonFilters[i]).removeClass('btn-success');
+          
+          }
+          $(buttonFilters[0]).addClass('btn-success');
+
+    });
 
     // filter items on button click
     $('#filters').on( 'click', 'button', function() {
@@ -49,9 +65,6 @@
 
     });
 
-   $('#test').click(function() {
-      console.log("test");
-    });
 
 });
 
