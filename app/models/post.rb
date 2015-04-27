@@ -31,9 +31,7 @@ class Post
     end
   end
 
-  def categories
-    post_category = ['women', 'men', 'kids', 'home']
-  end
+  
 
 
 end
