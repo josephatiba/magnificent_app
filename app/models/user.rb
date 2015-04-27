@@ -19,7 +19,7 @@ class User
   field :category, type: String
   field :bio, type: String
   field :contact_info, type: String
-  field :admin, type: Boolean, default: true
+  field :admin, type: Boolean, default: false
 
 
   def password=(unencrypted_password)
