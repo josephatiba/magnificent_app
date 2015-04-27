@@ -7,6 +7,7 @@ class Post
   field :title, type: String
   field :link, type: String
   field :description, type: String
+  field :category, type: String
   belongs_to :user
 
   mount_uploader :image, PhotoUploader
@@ -29,5 +30,10 @@ class Post
       shuffled_posts[1]
     end
   end
+
+  def categories
+    post_category = ['women', 'men', 'kids', 'home']
+  end
+
 
 end

@@ -19,7 +19,7 @@ class User
   field :category, type: String
   field :bio, type: String
   field :contact_info, type: String
-  field :admin, type: Boolean, default: false
+  field :admin, type: Boolean, default: true
 
 
   def password=(unencrypted_password)
@@ -38,6 +38,7 @@ class User
       return false
     end
   end
+
 
 
   mount_uploader :image, PhotoUploader

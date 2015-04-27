@@ -50,14 +50,14 @@ class PostsController < ApplicationController
 
 	def find_post
 		@post = Post.find(params[:id])
-    end
+  end
 
 	def post_params
 		params.require(:post).permit(:title, :link, :description, :user, :image, :post_pic)
 	end
 
 	def authorize
-		if @post.user != current_user
+		if current_user.admin != true
 			redirect_to @post
 		end
 	end

@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="post-options text-center center-block">
-			<% if current_user == @post.user %>
+			<% if current_user.admin == true %>
 
 				<%= link_to "Edit", edit_post_path(@post), class: "post-show-link" %>
 
