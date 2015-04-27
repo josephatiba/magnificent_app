@@ -41,8 +41,8 @@
     <!-- user posts -->
     <% @posts.each do |post| %>
       <div class="box panel panel-default">
-        <%= link_to image_tag(post.image.url(:tile), class: "post-index-tile"), post %>
-        <p><%= link_to post.title, post, class: "main-page-post-title" %></p>
+        <%= link_to image_tag(post.image.url(:tile), class: "post-index-tile"), post.link, :target => "_blank" %>
+        <p><%= link_to post.title, post.link, :target => "_blank", class: "main-page-post-title" %></p>
         </div>  
     <% end %>   
       
