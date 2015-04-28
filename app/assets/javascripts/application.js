@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-  $(document).ready(function() {
+  $(window).load(function() {
     
     $('#carousel-example-generic .carousel-inner > .item:first').addClass('active');
 
