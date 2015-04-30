@@ -25,7 +25,7 @@
        // init Isotope
     var $container = $('#container').isotope({
       // options
-      
+          
     });
 
     var buttonFilters = document.getElementsByClassName("filter-button");

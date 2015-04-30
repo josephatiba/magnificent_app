@@ -3,23 +3,23 @@
 <div class="container">
     <div class="row">
       <% if current_user %>
+        <div>Welcome, <%= current_user.first_name %>!</div>
+      <% end %>
+  
+    
 
-      <div>Welcome, <%= current_user.first_name %>!</div>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg %>
     <% end %>
-  <div>
 
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg %>
-  <% end %>
+    <%= logged_in? ? '' : link_to("Add New Magnificence", new_post_path) %>
 
-
-  <%= logged_in? ? '' : link_to("Add New Magnificence", new_post_path) %>
-
- </div>
+  </div>
+</div>
 
 <!-- Big "Magnificent" at the top of the page-->
   <div class="feed header text-center center-block">
-  <h1>The Magnificent<h1>
+    <h1>The Magnificent</h1>
 		  
 
 		<div id="filters" class="button-group">
@@ -32,34 +32,36 @@
 
  </div>
   <!-- Current User's name Display -->
+<br />
 
-
-<div class="container" id="masonry-container">
-  <div id="container"> 
-    
-
-    <!-- user posts -->
-    <% @posts.each do |post| %>
-      <div class="box panel panel-default <%= post.category %>">
-        <%= link_to image_tag(post.image.url(:tile), class: "post-index-tile"), post.link, :target => "_blank" %>
-        <p><%= link_to post.title, post.link, :target => "_blank", class: "main-page-post-title" %></p>
-        </div>  
-    <% end %>   
       
+      <div id="container"> 
+        
 
-    <!-- Gilt API posts -->
-    <% @gilt.gilt_search.each do |sale| %>  
-      <div class="box panel panel-default <%= sale[:store] %>">
-        <%= link_to image_tag(sale[:image_url], class: "post-index-tile"), sale[:sale_url], :target => "_blank" %>
-        <p><%= link_to sale[:sale_name], sale[:sale_url], :target => "_blank", class: "main-page-post-title" %></p>
+        <!-- user posts -->
+        <% @posts.each do |post| %>
+          <div class="box panel panel-default <%= post.category %> isotope-item center-block">
+            <%= link_to image_tag(post.image.url(:tile), class: "post-index-tile"), post.link, :target => "_blank", class: "post-index-link" %>
+            <p><%= link_to post.title, post.link, :target => "_blank", class: "main-page-post-title" %></p>
+          </div>  
+        <% end %>   
+          
 
-      </div>
-    <% end %> 
+        <!-- Gilt API posts -->
+        <% @gilt.gilt_search.each do |sale| %>  
+          <div class="box panel panel-default <%= sale[:store] %> center-block">
+            <%= link_to image_tag(sale[:image_url], class: "post-index-tile"), sale[:sale_url], :target => "_blank", class: "post-index-link" %>
+            <p><%= link_to sale[:sale_name], sale[:sale_url], :target => "_blank", class: "main-page-post-title" %></p>
+
+          </div>
+        <% end %> 
 
 
-    
-  </div>  
-</div>
+        
+      </div>  
+
+
+
     
 
 
