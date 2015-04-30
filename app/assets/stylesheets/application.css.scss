@@ -20,7 +20,7 @@
 @import "bootstrap";
 
 // variables
-$max-width: 945px;
+$max-width: 965px;
 $max-height: 100%;
 
 * {
@@ -38,34 +38,50 @@ body {
    width: $max-width;
    padding-left: 0;
    padding-right: 0;
-}
-
-.collapse.navbar-collapse ul li 
-{
-   padding-top: 0;
-   @media screen and (max-width: 768px){
-      padding-top: 25px;
+   @media screen and (max-width: 965px){
+      width: 630px;
+   }
+   @media screen and (max-width: 630px){
+      width: 315px;
    }
 }
+
+
+
+
 
 /*
 ====================
   nav bar styling
 ====================
 */
+// .nav-main 
+// {
+//    width: $max-width;
+//    margin: 0 auto;
+// }
 
 .navbar 
 {
    background-color: black;
-   .navbar-brand
-   {
+   .nav-container {
+      width: 965px;
+      margin: 0 auto;
       color: white;
-      position: relative;
-      left: 20%;
-   }
-   .navbar-nav li a
-   {
-      color: white;
+      @media screen and (max-width: 965px) {
+         width: 630px;
+      }
+      .navbar-brand
+      {
+         padding-left: 10px;
+         color: white;
+      }
+      .nav.navbar-nav.navbar-right {
+         padding-right: 10px;
+         li a {
+            color: white;
+         }
+      }
    }
 }
 
@@ -74,9 +90,23 @@ body {
    padding-left: 0;
 }
 
-.nav-toggle-button
+
+
+
+
+.collapse.navbar-collapse ul li 
+{
+   padding-top: 0;
+   @media screen and (max-width: 768px){
+      padding-top: 25px;
+      color: white;
+   }
+}
+
+.nav-toggle
 {
    background-color: white;
+   color: white;
 }
 
 
@@ -88,10 +118,7 @@ body {
 ====================
 */
 
-.nav-main 
-{
-   margin: 0 auto;
-}
+
 
 .panel
 {
@@ -109,7 +136,11 @@ body {
 .feed
 {
    padding: 0;
+  @media screen and (max-width: 630px){
+      width: 315px;
+   }
 }
+
 
 
 
@@ -132,7 +163,12 @@ body {
 
 #container {
    margin: 0 auto;
-   max-width: 945px;
+   @media screen and (max-width: 965px){
+      width: 630px;
+   }
+   @media screen and (max-width: 630px){
+      width: 315px;
+   }
    .box.panel.panel-default {
       position: relative;
    }
