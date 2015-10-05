@@ -61,7 +61,7 @@ gem 'simple_form', '~> 3.1.0'
 gem 'mongoid-paperclip', '~> 0.0.9'
 
 # Use for the hashing algorithm
-gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
+gem "bcrypt"
 
 # Use unicorn as the app server
 # gem 'unicorn'
