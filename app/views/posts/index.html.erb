@@ -42,7 +42,7 @@
         <% @posts.each do |post| %>
           <div class="box panel panel-default <%= post.category %> isotope-item center-block">
             <%= link_to image_tag(post.image.url(:tile), class: "post-index-tile"), post.link, :target => "_blank", class: "post-index-link" %>
-            <p><%= link_to post.title, post.link, :target => "_blank", class: "main-page-post-title" %></p>
+            <p><%= link_to post.title, post_path(post), :target => "_blank", class: "main-page-post-title" %></p>
           </div>  
         <% end %>   
           

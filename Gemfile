@@ -5,13 +5,18 @@ ruby '2.1.3'
 gem 'better_errors'
 gem 'binding_of_caller'
 
+
+gem 'mongo', '~> 2.1'
+gem 'bson', '~> 3.0'
+
 # Adding the Mongoid to this app 
-gem 'mongoid', '~> 4.0.0'
+gem 'mongoid', '~> 5.0.0'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 
-gem 'carrierwave'
-gem 'carrierwave-mongoid', :require =>'carrierwave/mongoid'
+gem 'carrierwave-mongoid', '~> 0.8.1'
 
 gem 'fog'  # for Amazon S3
 gem 'mini_magick' # for post-upload processing
@@ -58,7 +63,7 @@ gem 'spring',        group: :development
 gem 'simple_form', '~> 3.1.0'
 
 # Paperclip for attaching photos
-gem 'mongoid-paperclip', '~> 0.0.9'
+# gem 'mongoid-paperclip', '~> 0.0.9'
 
 # Use for the hashing algorithm
 gem "bcrypt"

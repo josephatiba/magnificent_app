@@ -39,7 +39,7 @@
             <div class="item">
         	      <%= image_tag post.image.url(:post_pic), class: "center-block" %>
               <div class="carousel-caption">
-                <%=  post.title %>
+                <%= link_to(post.title, post_path(post)) %>
               </div>
             </div>
             <% end %>
