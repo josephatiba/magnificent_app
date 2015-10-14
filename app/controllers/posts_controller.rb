@@ -2,7 +2,7 @@ require_relative 'gilt'
 
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
-	before_action :authorize, only: [:edit, :update, :destroy]
+	before_action :authorize, only: [:show, :edit, :update, :destroy]
 	
 
 	def index
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
 
 	def authorize
 		if current_user.admin != true
-			redirect_to @post
+			redirect_to @posts
 		end
 	end
 end
