@@ -34,9 +34,9 @@
 
     $(document).ready(function(){
       var filterValue = $(buttonFilters[0]).attr('data-filter');
-      console.log(filterValue);
-      console.log(this);
-      console.log(buttonFilters.length);
+      // console.log(filterValue);
+      // console.log(this);
+      // console.log(buttonFilters.length);
       $container.isotope({ filter: filterValue });
       for(i = 0; i < buttonFilters.length; i++) {
         
@@ -50,9 +50,9 @@
     // filter items on button click
     $('#filters').on( 'click', 'button', function() {
       var filterValue = $(this).attr('data-filter');
-      console.log(filterValue);
-      console.log(this);
-      console.log(buttonFilters.length);
+      // console.log(filterValue);
+      // console.log(this);
+      // console.log(buttonFilters.length);
       $container.isotope({ filter: filterValue });
       
       // adds greed color to color selected button
