@@ -20,7 +20,7 @@ The Magnificent is web application containing a luxury lifestyle blog.
 
 == Instructions
 
-Link to Herokuapp: http://magnificent.herokuapp.com/
+Link to Herokuapp: http://www.shopmagnificent.com/
 
 == About the Developer
 
